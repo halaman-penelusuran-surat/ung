@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Halaman Penelusuran Surat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1000px;
+        background: #ffffff;
+        margin: 30px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 30px 40px;
+        position: relative; /* penting untuk QR */
+      }
+
+      /* ===== QR CODE ===== */
+      #qrcode {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      .header {
+        text-align: center;
+      }
+
+      .header img {
+        width: 180px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .title {
+        font-size: 30px; /* BESARKAN DI SINI */
+        font-weight: normal; /* Tidak bold */
+        margin-bottom: 5px;
+      }
+
+      .bold-text {
+        font-weight: bold;
+        font-size: 18px; /* Atur ukuran di sini */
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #e6f4ff;
+        color: #007acc;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 10px;
+        margin-bottom: 10px;
+      }
+
+      .badge-logo {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+
+      .info-row {
+        display: flex;
+        padding: 12px 10px;
+        font-size: 14px;
+        border-bottom: 1px solid #dcdcdc;
+      }
+
+      .info-label {
+        width: 220px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      .info-colon {
+        width: 20px;
+        text-align: center;
+      }
+
+      .info-value {
+        flex: 1;
+        color: #333;
+      }
+
+      .disposisi-box {
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .disposisi-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .disposisi-item:last-child {
+        border-bottom: none;
+      }
+
+      .disposisi-time {
+        background: #00b3b3;
+        color: white;
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 12px;
+      }
+
+      .arrow {
+        color: red;
+        font-weight: bold;
+      }
+
+      .nama-dosen {
+        font-weight: bold;
+      }
+
+      .download {
+        margin-top: 15px;
+        padding-left: 10px;
+      }
+
+      .download a {
+        text-decoration: none;
+        color: #007acc;
+        font-weight: bold;
+      }
+
+      .download a:hover {
+        text-decoration: underline;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #eee;
+        margin: 15px 0;
+      }
+      #qrcode {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+
+      .qr-wrapper {
+        position: relative;
+        width: 90px;
+        height: 90px;
+      }
+      .qr-logo {
+        position: absolute;
+        top: 70%;
+        left: 73%;
+        width: 50px;
+        height: 50px;
+        transform: translate(-50%, -50%);
+        object-fit: contain;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- QR CODE -->
+      <div class="qr-wrapper">
+        <div id="qrcode"></div>
+        <img src="logo_Universitas-Negeri-Gorontalo.png" class="qr-logo" />
+      </div>
+
+      <div class="header">
+        <img
+          src="logo_Universitas-Negeri-Gorontalo.png"
+          alt="Logo Universitas"
+        />
+        <div class="title">Halaman Penelusuran Surat</div>
+
+        <div class="subtitle">
+          <span class="bold-text">Manajemen Surat</span><br />
+          <span class="bold-text">Universitas Negeri Gorontalo</span>
+        </div>
+        <div class="badge">
+          <img src="logobsre-removebg-preview.png" class="badge-logo" />
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="info-row">
+        <div class="info-label">Nomor Surat</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">0495/UN47.C.1/KM.00.00/2025</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Tanggal Terbit</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">12 Feb. 2025, 18.11</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Penanda Tangan</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">Prof. Dr. Ir. Hasim, M.Si</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">NIP</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">196912311994031014</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Jabatan</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">
+          Wakil Direktur Bidang Akademik, Kemahasiswaan dan Alumni
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Perihal</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">
+          Surat Keterangan Aktif Kuliah a.n Mesa Setya
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-label">Tujuan Surat</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">Mesa Setya</div>
+      </div>
+
+      <hr />
+
+      <div class="info-row">
+        <div class="info-label">Disposisi</div>
+        <div class="info-colon">:</div>
+        <div class="info-value">
+          <div class="disposisi-box">
+            <div class="disposisi-item">
+              <div>
+                <span class="nama-dosen">Suriyati Abdullah, S.Pd</span>
+                <span class="arrow">»</span>
+                <span class="nama-dosen">Santi Rahman, S.Pd</span>
+              </div>
+              <div class="disposisi-time">13/01 16:30</div>
+            </div>
+
+            <div class="disposisi-item">
+              <div>
+                <span class="nama-dosen">Santi Rahman, S.Pd</span>
+              </div>
+              <div class="disposisi-time">13/01 18:04</div>
+            </div>
+
+            <div class="disposisi-item">
+              <div>
+                <span class="nama-dosen">Santi Rahman, S.Pd</span>
+                <span class="arrow">»</span>
+                <span class="nama-dosen">Prof. Dr. Ir. Hasim, M.Si</span>
+              </div>
+              <div class="disposisi-time">13/01 18:04</div>
+            </div>
+
+            <div class="disposisi-item">
+              <div>
+                <span class="nama-dosen">Prof. Dr. Ir. Hasim, M.Si</span>
+              </div>
+              <div class="disposisi-time">13/01 18:11</div>
+            </div>
+
+            <div class="disposisi-item">
+              <div>
+                <span class="nama-dosen">Prof. Dr. Ir. Hasim, M.Si</span>
+              </div>
+              <div class="disposisi-time">13/01 18:20</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="download">
+        File Surat :
+        <a href="MS-UNG-25412-24587226.pdf" target="_blank"> Download Surat </a>
+      </div>
+    </div>
+
+    <!-- SCRIPT QR CODE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+      new QRCode(document.getElementById("qrcode"), {
+        text: "ung.id/0495",
+        width: 90,
+        height: 90,
+        colorDark: "#3F0071",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+    </script>
+  </body>
+</html>
